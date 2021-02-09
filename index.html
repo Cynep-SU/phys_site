@@ -31,7 +31,7 @@
                 console.log(g, num)
                 document.body.insertAdjacentHTML("beforeend", '<div class="input-group pb-1 px-3" id="' + g.toString() + '"> <input type="number" class="form-control" aria-label="Text input with dropdown button" placeholder="Сопротивление"> <select class="form-select" aria-label="Default select example"> <option selected>Направление</option> <option value="L">L</option> <option value="R">R</option> </select> <input type="number" class="form-control" aria-label="Text input with dropdown button" placeholder="Вольтаж"> </div>');
             }
-            document.body.insertAdjacentHTML("beforeend", '<div class="d-flex flex-row-reverse px-3" id="' + num.toString() + '">\n' +
+            document.body.insertAdjacentHTML("beforeend", '<div class="d-flex flex-row-reverse px-3 pb-2" id="' + num.toString() + '">\n' +
                 '    <button class="btn btn-outline-primary" type="button" onclick="decide()">Решить</button>\n' +
                 '</div>');
             document.body.insertAdjacentHTML("beforeend", '<div class="accordion px-3" id="accordionExample">\n' +
@@ -81,7 +81,7 @@
     <form>
         <div class="input-group">
             <span class="input-group-text">Колличество ветвей</span>
-            <input name="lines" type="number" min=2 class="form-control" aria-label="Text input with dropdown button" value=3 onchange="lines_(this.value)">
+            <input name="lines" type="number" min=2 class="form-control" aria-label="" value=3 onchange="lines_(this.value)">
         </div>
     </form>
 </div>
