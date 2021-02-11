@@ -43,12 +43,31 @@
                 '</div>');
             document.body.insertAdjacentHTML("beforeend", '<div class="accordion px-3" id="accordionExample">\n' +
                 '    <div class="accordion-item">\n' +
+                '        <h2 class="accordion-header" id="headingZero">\n' +
+                '            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseZero" aria-controls="collapseOne">\n' +
+                '                Инфо\n' +
+                '            </button>\n' +
+                '        </h2>\n' +
+                '        <div id="collapseZero" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">\n' +
+                '            <div class="accordion-body">\n' +
+                '                Мне кажется понятно, что куда вводить, но думаю нужны некоторые пояснения. <br>\n' +
+                '                Думаю, первое что вам надо сделать это поставить количество ветвей, так как при измненении значение полей сбрасываются. <br>\n' +
+                '                Сопротивление - это общее сопротивление ветви, то есть вместе с сопротивлением источника. <br>\n' +
+                '                В направлении: L - к узлу куда стекаются токи. R - от этого узла. <br>\n' +
+                '                R1 в решении МН - это сопротивление остальных ветвей, кроме той которой вы выясняете ток. <br><br><br>\n' +
+                '\n' +
+                '\n' +
+                '                Этот сайт создан каким-то ноунеймом, но вы можете ему помочь с разработкой сайта.<br> Это можно сделать как информацией, то есть если вы хорошо разбираетеся в вёрстке, в js и т.п. то найдёте мою телегу на гитхабе по ссылке ниже.<br> Так и материально для этого можете связаться со мной, но скоро появится специальная кнопка.\n' +
+                '            </div>\n' +
+                '        </div>\n' +
+                '    </div>\n' +
+                '    <div class="accordion-item">\n' +
                 '        <h2 class="accordion-header" id="headingOne">\n' +
-                '            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">\n' +
+                '            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">\n' +
                 '                MУH\n' +
                 '            </button>\n' +
                 '        </h2>\n' +
-                '        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">\n' +
+                '        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">\n' +
                 '            <div class="accordion-body">\n' +
                 '                Нажми на \'решить\', чтобы тут появился ответ.\n' +
                 '            </div>\n' +
@@ -79,9 +98,9 @@
                 '        </div>\n' +
                 '    </div>\n' +
                 '</div>')
-            document.body.insertAdjacentHTML("beforeend", '<footer class="bg-white py-2 d-flex justify-content-center" id = \'footer\'>\n' +
+            document.body.insertAdjacentHTML("beforeend", '<footer class="py-2 d-flex justify-content-center" id = \'footer\'>\n' +
                 '    <a href="https://github.com/Cynep-SU">\n' +
-                '        <img src="github.png" alt="HTML tutorial" style="width:42px;height:42px;">\n' +
+                '        <img src="images/pankoff.png" alt="HTML tutorial" style="width:111px;height:111px;">\n' +
                 '    </a>\n' +
                 '</footer>')
 
@@ -127,12 +146,31 @@
 </div>
 <div class="accordion px-3" id="accordionExample">
     <div class="accordion-item">
+        <h2 class="accordion-header" id="headingZero">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseZero" aria-controls="collapseOne">
+                Инфо
+            </button>
+        </h2>
+        <div id="collapseZero" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                Мне кажется понятно, что куда вводить, но думаю нужны некоторые пояснения. <br>
+                Думаю, первое что вам надо сделать это поставить количество ветвей, так как при измненении значение полей сбрасываются. <br>
+                Сопротивление - это общее сопротивление ветви, то есть вместе с сопротивлением источника. <br>
+                В направлении: L - к узлу куда стекаются токи. R - от этого узла. <br>
+                R1 в решении МН - это сопротивление остальных ветвей, кроме той которой вы выясняете ток. <br><br><br>
+
+
+                Этот сайт создан каким-то ноунеймом, но вы можете ему помочь с разработкой сайта.<br> Это можно сделать как информацией, то есть если вы хорошо разбираетеся в вёрстке, в js и т.п. то найдёте мою телегу на гитхабе по ссылке ниже.<br> Так и материально для этого можете связаться со мной, но скоро появится специальная кнопка.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 MУH
             </button>
         </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 Нажми на 'решить', чтобы тут появился ответ.
             </div>
@@ -163,7 +201,7 @@
         </div>
     </div>
 </div>
-<footer class="bg-white py-2 d-flex justify-content-center" id = 'footer'>
+<footer class="py-2 d-flex justify-content-center" id = 'footer'>
     <a href="https://github.com/Cynep-SU">
         <img src="images/pankoff.png" alt="HTML tutorial" style="width:111px;height:111px;">
     </a>
