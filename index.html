@@ -54,7 +54,7 @@
                 '            </button>\n' +
                 '        </h2>\n' +
                 '        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">\n' +
-                '            <div class="accordion-body">\n' +
+                '            <div class="accordion-body" id="MYH">\n' +
                 '                Нажми на \'решить\', чтобы тут появился ответ.\n' +
                 '            </div>\n' +
                 '        </div>\n' +
@@ -66,7 +66,7 @@
                 '            </button>\n' +
                 '        </h2>\n' +
                 '        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">\n' +
-                '            <div class="accordion-body">\n' +
+                '            <div class="accordion-body" id="MH">\n' +
                 '                Нажми на \'решить\', чтобы тут появился ответ.\n' +
                 '            </div>\n' +
                 '        </div>\n' +
@@ -78,7 +78,7 @@
                 '            </button>\n' +
                 '        </h2>\n' +
                 '        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">\n' +
-                '            <div class="accordion-body">\n' +
+                '            <div class="accordion-body" id="MKY">\n' +
                 '                Нажми на \'решить\', чтобы тут появился ответ.\n' +
                 '            </div>\n' +
                 '        </div>\n' +
@@ -157,7 +157,7 @@
             </button>
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
+            <div class="accordion-body" id="MYH">
                 Нажми на 'решить', чтобы тут появился ответ.
             </div>
         </div>
@@ -169,7 +169,7 @@
             </button>
         </h2>
         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
+            <div class="accordion-body" id="MH">
                 Нажми на 'решить', чтобы тут появился ответ.
             </div>
         </div>
@@ -181,7 +181,7 @@
             </button>
         </h2>
         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
+            <div class="accordion-body" id="MKY">
                 Нажми на 'решить', чтобы тут появился ответ.
             </div>
         </div>
@@ -284,9 +284,18 @@
             alert(xhr.status + ': ' + xhr.statusText); // пример вывода: 404: Not Found
         } else {
             // вывести результат
-            document.getElementById('collapseOne').innerText = JSON.parse(xhr.responseText).MYH
-            document.getElementById('collapseTwo').innerText = JSON.parse(xhr.responseText).MH
-            document.getElementById('collapseThree').innerText = JSON.parse(xhr.responseText).MYKY;
+
+            $("button[data-bs-target='#collapseZero']").removeClass('accordion-button')
+            $("button[data-bs-target='#collapseZero']").addClass('accordion-button collapsed')
+            $("#collapseZero").removeClass("accordion-collapse collapse show")
+            $("#collapseZero").addClass("accordion-collapse collapse")
+            $("button[data-bs-target='#collapseOne']").removeClass('accordion-button collapsed')
+            $("button[data-bs-target='#collapseOne']").addClass('accordion-button')
+            $("#collapseOne").removeClass("accordion-collapse collapse")
+            $("#collapseOne").addClass("accordion-collapse collapse show")
+            document.getElementById('MYH').innerText = JSON.parse(xhr.responseText).MYH
+            document.getElementById('MH').innerText = JSON.parse(xhr.responseText).MH
+            document.getElementById('MKY').innerText = JSON.parse(xhr.responseText).MYKY;
         }
     }
 </script>
