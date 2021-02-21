@@ -218,19 +218,13 @@
             document.getElementById('MYH').innerText = JSON.parse(xhr.responseText).MYH
             document.getElementById('MH').innerText = JSON.parse(xhr.responseText).MH
             document.getElementById('MKY').innerText = JSON.parse(xhr.responseText).MYKY;
-        }
-        xhr.open('POST', 'https://b2a076121e8e.ngrok.io/phys_program_table', false);
-        xhr.send(array);
-        if (xhr.status != 200) {
-            // обработать ошибку
-            alert(xhr.status + ': ' + xhr.statusText); // пример вывода: 404: Not Found
-        } else {
             document.getElementById('Table_collapse').innerHTML = JSON.parse(xhr.responseText).html
             $("button[data-bs-target='#Table_collapse']").removeClass('accordion-button collapsed')
             $("button[data-bs-target='#Table_collapse']").addClass('accordion-button')
             $("#Table_collapse").removeClass("accordion-collapse collapse")
             $("#Table_collapse").addClass("accordion-collapse collapse show")
         }
+
     }
 </script>
 </html>
