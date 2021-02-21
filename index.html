@@ -28,17 +28,53 @@
 
 
 
-    function lines_(num){
-        console.log(num)
-        num = parseInt(num)
 
+
+    function lines_(num){
+        let array = []
+        let lines_num = document.forms[0].elements.lines.value
+        for (let i = 0; i < lines_num + 1; i++) {
+
+            el = document.getElementById(i.toString())
+            try{
+                let elementChildrens = el.children
+                if (elementChildrens.length === 3){
+                    for (let i = 0; i < elementChildrens.length; i++) {
+                        array.push(elementChildrens[i].value)
+                    }
+                }
+            }catch (e){
+                console.log(e)
+            }
+
+        }
+        num = parseInt(num)
+        console.log(array)
         if (num >= 2) {
             last_num_numbers += 1
             document.getElementById("lines").innerHTML = ''
             num += 1
             for (let g = 1; g < num; g++) {
-                console.log(g, num)
-                document.getElementById("lines").insertAdjacentHTML("afterbegin", '<div class="input-group pb-1" id="' + g.toString() + '"> <input type="number" class="form-control" aria-label="Text input with dropdown button" placeholder="Сопротивление"> <select class="form-select" aria-label="Default select example"> <option selected>Направление</option> <option value="L">L</option> <option value="R">R</option> </select> <input type="number" class="form-control" aria-label="Text input with dropdown button" placeholder="Вольтаж"> </div>');
+                document.getElementById("lines").insertAdjacentHTML("beforeend", '<div class="input-group pb-1" id="' + g.toString() + '"> <input type="number" class="form-control" aria-label="Text input with dropdown button" placeholder="Сопротивление"> <select class="form-select" aria-label="Default select example"> <option selected>Направление</option> <option value="L">L</option> <option value="R">R</option> </select> <input type="number" class="form-control" aria-label="Text input with dropdown button" placeholder="Вольтаж"> </div>');
+            }
+            let lines_num = document.forms[0].elements.lines.value
+            for (let i = 1; i < lines_num + 1; i++) {
+
+                el = document.getElementById(i.toString())
+                try{
+                    if (array.length == 0){
+                        break
+                    }
+                    let elementChildrens = el.children
+                    if (elementChildrens.length === 3){
+                        for (let i = 0; i < elementChildrens.length; i++) {
+                            elementChildrens[i].value = array.shift()
+                        }
+                    }
+                }catch (e){
+                    console.log(e)
+                }
+
             }
 
         }
