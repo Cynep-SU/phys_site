@@ -194,6 +194,10 @@
                 let elementChildrens = el.children
                 if (elementChildrens.length === 3){
                     for (let i = 0; i < elementChildrens.length; i++) {
+                        if (elementChildrens[i].value == '' || elementChildrens[i].value == 'Направление'){
+                            alert('Мне кажется что ты забыл где-то указать значения.')
+                            return
+                        }
                         array.push(elementChildrens[i].value)
                     }
                 }
