@@ -212,13 +212,6 @@
     }
     var xhr = new XMLHttpRequest();
 
-    // 2. Конфигурируем его: GET-запрос на URL 'phones.json'
-
-
-    // 3. Отсылаем запрос
-    // xhr.send([1, 2, 3]);
-
-    // 4. Если код ответа сервера не 200, то это ошибка
 
     function decide() {
         let array = []
@@ -246,15 +239,8 @@
         xhr.open('POST', 'https://b2a076121e8e.ngrok.io/phys_program', false);
         xhr.send(array);
         if (xhr.status != 200) {
-            // обработать ошибку
-            alert(xhr.status + ': ' + xhr.statusText); // пример вывода: 404: Not Found
+            alert(xhr.status + ': ' + xhr.statusText);
         } else {
-            // вывести результат
-
-            $("button[data-bs-target='#collapseZero']").removeClass('accordion-button')
-            $("button[data-bs-target='#collapseZero']").addClass('accordion-button collapsed')
-            $("#collapseZero").removeClass("accordion-collapse collapse show")
-            $("#collapseZero").addClass("accordion-collapse collapse")
             document.getElementById('MYH').innerText = JSON.parse(xhr.responseText).MYH
             document.getElementById('MH').innerText = JSON.parse(xhr.responseText).MH
             document.getElementById('MKY').innerText = JSON.parse(xhr.responseText).MYKY;
